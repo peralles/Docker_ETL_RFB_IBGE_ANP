@@ -8,12 +8,6 @@ build_docker() {
 
 # run.sh
 run_docker() {
-    echo "🚀 Starting PostgreSQL..."
-    docker-compose up -d db
-    
-    echo "⏳ Waiting for PostgreSQL to be ready..."
-    sleep 5
-    
     echo "🖥️  Starting interactive session..."
     docker-compose run --rm app
 }

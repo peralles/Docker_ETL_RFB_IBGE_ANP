@@ -1,9 +1,11 @@
 import inspect
 import math
 import os
+import platform
 import shutil
 import time
 import timeit
+from pathlib import Path
 from time import sleep
 
 import enlighten
@@ -20,7 +22,8 @@ logs = Logs(filename="logs.log")
 
 
 def limpar_terminal():
-    os.system("cls")
+    """Cross-platform screen clearing"""
+    os.system('cls' if platform.system() == 'Windows' else 'clear')
 
 
 def VerifPath():
@@ -37,260 +40,55 @@ def VerifPath():
     except Exception as text:
         log_retorno_erro(text)
 
-
-def Criar_Var_Ambiente():
-    """Função para criação do arquivo txt de variáveis de ambiente"""
-
-    os.system("cls")
-
-    print("Caminho de trabalho atual: \n")
-    cwd_atual = os.getcwd()
-    # cwd_atual_trab = (cwd_atual + '\src')
-    print("=== Operações com o arquivo de configuração de ambiente === \n")
-    # Criar arquivo de configuração de ambiente
-    host = "localhost"  # input('Digite o HOST usado do banco: ')
-    port = "5432"  # input('Digite a PORTA usada do banco: ')
-    user = "postgres"  # input('Digite o USERNAME usado do banco: ')
-    passw = "xxxx"  # input('Digite o PASSWORD usado do banco: ')
-    namebd = "dados_etl"  # input('Digite o NAME BD do banco: ')
-
-    try:
-        print("Informações do arquivo de configuração de ambiente \n")
-        # nome_arquivo_env = ('env.txt')
-        nome_arquivo_env = ".env"
-        arquivo = open(nome_arquivo_env, "a")
-
-        tmp0 = cwd_atual + r"\files\dados_rfb"
-        tmp1 = cwd_atual + r"\files\dados_rfb\OUTPUT_FILES"
-        tmp2 = cwd_atual + r"\files\dados_rfb\EXTRACTED_FILES"
-        tmp3 = cwd_atual + r"\files\dados_rfb\EXTRACTED_FILES_CONVERT"
-        tmp4 = cwd_atual + r"\files\dados_rfb\OUTPUT_ERROS"
-
-        tmp5 = cwd_atual + r"\files\dados_ibge"
-        tmp6 = cwd_atual + r"\files\dados_ibge\OUTPUT_ERROS"
-
-        tmp7 = cwd_atual + r"\files\dados_anp"
-        tmp8 = cwd_atual + r"\files\dados_anp\OUTPUT_ERROS"
-
-        tmp9 = cwd_atual + r"\files\dados_rais"
-        tmp10 = cwd_atual + r"\files\dados_rais\OUTPUT_FILES"
-        tmp11 = cwd_atual + r"\files\dados_rais\EXTRACTED_FILES"
-        tmp12 = cwd_atual + r"\files\dados_rais\EXTRACTED_FILES_CONVERT"
-        tmp13 = cwd_atual + r"\files\dados_rais\OUTPUT_ERROS"
-
-        tmp14 = cwd_atual + r"\files\dados_sgi"
-        tmp15 = cwd_atual + r"\files\dados_sgi\OUTPUT_FILES"
-        tmp16 = cwd_atual + r"\files\dados_sgi\OUTPUT_FILES_CONVERT"
-        tmp17 = cwd_atual + r"\files\dados_sgi\OUTPUT_ERROS"
-
-        tmp18 = cwd_atual + r"\files\dados_ft"
-        tmp19 = cwd_atual + r"\files\dados_ft\OUTPUT_FILES"
-        tmp20 = cwd_atual + r"\files\dados_ft\OUTPUT_FILES_CONVERT"
-        tmp21 = cwd_atual + r"\files\dados_ft\OUTPUT_ERROS"
-
-        tmp22 = cwd_atual + r"\files\dados_var_estruturantes"
-        tmp23 = cwd_atual + r"\files\dados_var_estruturantes\OUTPUT_FILES"
-        tmp24 = (
-            cwd_atual + r"\files\dados_var_estruturantes\OUTPUT_FILES_CONVERT"
-        )
-        tmp25 = cwd_atual + r"\files\dados_var_estruturantes\OUTPUT_ERROS"
-
-        frases = list()
-        frases.append("RFB_FILES_PATH=" + tmp0 + "\n")
-        frases.append("OUTPUT_FILES_PATH=" + tmp1 + "\n")
-        frases.append("EXTRACTED_FILES_PATH=" + tmp2 + "\n")
-        frases.append("EXTRACTED_FILES_PATH_CONVERT=" + tmp3 + "\n")
-        frases.append("OUTPUT_ERROS=" + tmp4 + "\n")
-
-        frases.append("IBGE_FILES_PATH=" + tmp5 + "\n")
-        frases.append("IBGE_OUTPUT_ERROS_PATH=" + tmp6 + "\n")
-
-        frases.append("ANP_FILES_PATH=" + tmp7 + "\n")
-        frases.append("ANP_OUTPUT_ERROS_PATH=" + tmp8 + "\n")
-
-        frases.append("RAIS_FILES_PATH=" + tmp9 + "\n")
-        frases.append("RAIS_OUTPUT_FILES_PATH=" + tmp10 + "\n")
-        frases.append("RAIS_EXTRACTED_FILES_PATH=" + tmp11 + "\n")
-        frases.append("RAIS_EXTRACTED_FILES_PATH_CONVERT=" + tmp12 + "\n")
-        frases.append("RAIS_OUTPUT_ERROS_PATH=" + tmp13 + "\n")
-
-        frases.append("SGI_FILES_PATH=" + tmp14 + "\n")
-        frases.append("SGI_OUTPUT_FILES_PATH=" + tmp15 + "\n")
-        frases.append("SGI_OUTPUT_FILES_PATH_CONVERT=" + tmp16 + "\n")
-        frases.append("SGI_OUTPUT_ERROS_PATH=" + tmp17 + "\n")
-
-        frases.append("FT_FILES_PATH=" + tmp18 + "\n")
-        frases.append("FT_OUTPUT_FILES_PATH=" + tmp19 + "\n")
-        frases.append("FT_OUTPUT_FILES_PATH_CONVERT=" + tmp20 + "\n")
-        frases.append("FT_OUTPUT_ERROS_PATH=" + tmp21 + "\n")
-
-        frases.append("VAR_FILES_PATH=" + tmp22 + "\n")
-        frases.append("VAR_OUTPUT_FILES_PATH=" + tmp23 + "\n")
-        frases.append("VAR_OUTPUT_FILES_PATH_CONVERT=" + tmp24 + "\n")
-        frases.append("VAR_OUTPUT_ERROS_PATH=" + tmp25 + "\n")
-
-        frases.append("DB_HOST=" + host + "\n")
-        frases.append("DB_PORT=" + port + "\n")
-        frases.append("DB_USER=" + user + "\n")
-        frases.append("DB_PASSWORD=" + passw + "\n")
-        frases.append("DB_NAME=" + namebd + "\n")
-        # ENDEREÇO PARA DONWNLOAD DOS DADOS PRINCIPAIS - https://dados.gov.br/dados/conjuntos-dados/cadastro-nacional-da-pessoa-juridica---cnpj
-        frases.append("URL_RFB_1=" + "http://200.152.38.155/CNPJ/" + "\n")
-        # ENDEREÇO PARA DONWNLOAD DO REGIME TRIBUTÁRIO - https://dados.gov.br/dados/conjuntos-dados/cadastro-nacional-da-pessoa-juridica---cnpj
-        frases.append(
-            "URL_RFB_2="
-            + "http://200.152.38.155/CNPJ/regime_tributario/"
-            + "\n"
-        )
-        # TABELA AUXILIAR PARA CONVERSÃO DO CÓDIGO DO MUNICÍPIOS QUE A RECEITA FEDERAL UTILIZA QUE É O CÓD MUNICÍPIO DO SIAF PARA O CÓD MUNICÍPIO DO IBGE - https://www.gov.br/receitafederal/dados?b_start:int=0
-        frases.append(
-            "URL_IBGE_AUX_COD_MUNIC="
-            + r"https://www.gov.br/receitafederal/dados/municipios.csv/"
-            + "\n"
-        )
-        # Dados POPULAÇÃO 2022 por Pessoas - https://servicodados.ibge.gov.br/api/docs
-        frases.append(
-            "URL_IBGE_POP_2022="
-            + r"https://servicodados.ibge.gov.br/api/v3/agregados/4714/periodos/2022/variaveis/93?localidades=N6[all]"
-            + "\n"
-        )
-        # Dados PIB TOTAL, INDUSTRIAL E SERVIÇOS POR MUNICÍPIOS 2020 em Mil Reais - Fonte: https://servicodados.ibge.gov.br/api/docs
-        frases.append(
-            "URL_IBGE_PIB_2020="
-            + r"https://servicodados.ibge.gov.br/api/v3/agregados/5938/periodos/2020/variaveis/37|517|6575?localidades=N6[all]"
-            + "\n"
-        )
-        # Dados ÁREA TERRITORIAL URBANA 2019 - https://servicodados.ibge.gov.br/api/docs
-        frases.append(
-            "URL_IBGE_TER_URB_2019="
-            + r"https://servicodados.ibge.gov.br/api/v3/agregados/8418/periodos/-6/variaveis/12749?localidades=N6[all]"
-            + "\n"
-        )
-        # Dados ÁREA TERRITORIAL TOTAL 2022 - https://servicodados.ibge.gov.br/api/docs
-        frases.append(
-            "URL_IBGE_TER_2022="
-            + r"https://servicodados.ibge.gov.br/api/v3/agregados/4714/periodos/2022/variaveis/6318?localidades=N6[all]"
-            + "\n"
-        )
-        # Dados CNAE DETALHADO 2.3 - https://servicodados.ibge.gov.br/api/docs
-        frases.append(
-            "URL_IBGE_CNAE="
-            + r"https://servicodados.ibge.gov.br/api/v2/cnae/subclasses"
-            + "\n"
-        )
-        # Dados Cadastrais dos Revendedores Varejistas de Combustíveis Automotivos - https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/dados-cadastrais-dos-revendedores-varejistas-de-combustiveis-automotivos
-        frases.append(
-            "URL_ANP_POSTO_COMBUSTIVEIS="
-            + r"https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/arquivos-dados-cadastrais-dos-revendedores-varejistas-de-combustiveis-automotivos/dados-cadastrais-revendedores-varejistas-combustiveis-automoveis.csv"
-            + "\n"
-        )
-
-        # VARIÁVEIS ESTRUTURANTES
-        # Dados ANEEL - Capacidade Instalada por Unidade da Federação - Fonte: https://dadosabertos.aneel.gov.br/dataset/capacidade-instalada-por-unidade-da-federacao - Layout: https://dadosabertos.aneel.gov.br/dataset/cec20fdd-97e4-40a8-870f-c63339f5d8b7/resource/6fbee0f8-2617-4879-a69a-6b7892f12dad
-        frases.append(
-            "URL_ANEEL_CAPACIDADE_INSTALADA="
-            + r"https://dadosabertos.aneel.gov.br/datastore/dump/6fbee0f8-2617-4879-a69a-6b7892f12dad?bom=True"
-            + "\n"
-        )
-        # Dados DNIT - Plano Nacional de Viação e Sistema Nacional de Viação - Fonte: https://www.gov.br/dnit/pt-br/assuntos/atlas-e-mapas/pnv-e-snv
-        frases.append(
-            "URL_DNIT_SNV_REDE_PAVIMENTADA="
-            + r"https://servicos.dnit.gov.br/dnitcloud/index.php/s/oTpPRmYs5AAdiNr/download?path=%2FSNV%20Planilhas%20(2011-Atual)%20(XLS)&files=SNV_202308A.xlsx&downloadStartSecret=lqxu1hhnbuq"
-            + "\n"
-        )
-        # Dados ANATEL - Plano Estrutural de Redes de Telecomunicações - PERT - Fonte: https://www.gov.br/anatel/pt-br/dados/infraestrutura/pert - Opção: https://informacoes.anatel.gov.br/paineis/infraestrutura/rede-de-transporte
-        frases.append(
-            "URL_ANATEL_INFRA_REDE="
-            + r"https://www.anatel.gov.br/dadosabertos/paineis_de_dados/infraestrutura/mapeamento_rede_transporte.zip"
-            + "\n"
-        )
-        # Dados IBGE PNSB - Pesquisa Nacional de Saneamento Básico - Fonte: https://www.ibge.gov.br/estatisticas/multidominio/meio-ambiente/9073-pesquisa-nacional-de-saneamento-basico.html?=&t=resultados - Layout: https://ftp.ibge.gov.br/Indicadores_Sociais/Saneamento_Basico/2017/tabelas_xlsx/ - Origem: https://servicodados.ibge.gov.br/api/v3/agregados/5938/periodos/2020/variaveis/37|498|513|517|6575|525?localidades=N6[all]
-        frases.append(
-            "URL_IBGE_PNSB_ABASTACIMENTO_AGUA="
-            + r"https://ftp.ibge.gov.br/Indicadores_Sociais/Saneamento_Basico/2017/tabelas_xlsx/abastecimento_de_agua_20210624.zip"
-            + "\n"
-        )
-        frases.append(
-            "URL_IBGE_PNSB_ESGOTO_SANITARIO="
-            + r"https://ftp.ibge.gov.br/Indicadores_Sociais/Saneamento_Basico/2017/tabelas_xlsx/esgotamento_sanitario.zip"
-            + "\n"
-        )
-        # Dados Ministério da Justiça e Segurança Pública - MJSP - Ocorrências Criminais - Sinesp - Fonte: https://dados.gov.br/dados/conjuntos-dados/sistema-nacional-de-estatisticas-de-seguranca-publica - Layout: https://dados.mj.gov.br/dataset/210b9ae2-21fc-4986-89c6-2006eb4db247/resource/f29f6034-8dfc-4270-974e-ceedd18d7244/download/dicionario-de-dadosmunicipios.pdf
-        frases.append(
-            "URL_MJSP_OCORRENCIAS_CRIMINAIS="
-            + r"https://dados.mj.gov.br/dataset/210b9ae2-21fc-4986-89c6-2006eb4db247/resource/03af7ce2-174e-4ebd-b085-384503cfb40f/download/indicadoressegurancapublicamunic.xlsx"
-            + "\n"
-        )
-        # Dados Correios - Agência nos municípios Brasileiros - Fonte: https://mais.correios.com.br/app/index.php
-        frases.append(
-            "URL_CORREIOS_AGENCIAS_MUNICIPIOS="
-            + r"https://www2.correios.com.br/institucional/licit_compras_contratos/licitacoes/anexos/EDI_AP000001_2019_114383.pdf"
-            + "\n"
-        )
-        # Dados ICMBio - Atributos das Unidades de Conservação Federais - Fonte: https://dados.gov.br/dados/conjuntos-dados/tabela-de-atributos-e-informacoes-das-unidades-de-conservacao-federais
-        frases.append(
-            "URL_UNIDADES_CONSERVACAO_FEDERAIS="
-            + r"https://www.gov.br/icmbio/pt-br/acesso-a-informacao/dados-abertos/arquivos/atributos-das-unidades-de-conservacao-federais/atributos_oficiais_das_unidades_de_conservacao_federais.csv"
-            + "\n"
-        )
-        # Dados ICMBio - Limites oficiais das Unidades de Conservação Federais - Fonte: https://dados.gov.br/dados/conjuntos-dados/limites-oficiais-das-unidades-de-conservacao-federais
-        frases.append(
-            "URL_LIMITES_CONSERVACAO_FEDERAIS="
-            + r"https://www.gov.br/icmbio/pt-br/acesso-a-informacao/dados-abertos/arquivos/limites-oficiais-das-unidades-de-conservacao-federais/limiteucsfederais_032023_csv.csv"
-            + "\n"
-        )
-        # Dados IBGE - Municípios da Faixa de Fronteira e Cidades Gêmeas - Fonte: https://www.ibge.gov.br/geociencias/organizacao-do-territorio/estrutura-territorial/24073-municipios-da-faixa-de-fronteira.html?=&t=downloads
-        frases.append(
-            "URL_MUNICIPIOS_FAIXAS_FRONTEIRAS="
-            + r"https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/municipios_da_faixa_de_fronteira/2022/Mun_Faixa_de_Fronteira_Cidades_Gemeas_2022.xlsx"
-            + "\n"
-        )
-
-        arquivo.writelines(frases)
-        arquivo.close()
-
-        print_divisor_inicio_fim("Informações inseridas abaixo: ", 1)
-        # nome_arquivo_env = ('env.txt')
-        arquivo = open(nome_arquivo_env, "r")
-        conteudo_arquivo = arquivo.readlines()
-        for i in conteudo_arquivo:
-            print(i)
-
-        print_divisor_inicio_fim(
-            f"Número de linhas na letra: {len(conteudo_arquivo)}", 3
-        )
-        arquivo.close()
-
-    except FileNotFoundError as text:
-        print_divisor_inicio_fim(
-            "\n!!! Arquivo criado pois nao existia !!!", 3
-        )
-
-        arquivo = open(nome_arquivo_env, "w+")
-        arquivo.close()
-
-        log_retorno_erro(text)
-
-
-def GetEnv(env):
-    """Esta função é para ler as variáveis de ambiente dos arquivo '.env' já pré-configurado
+def GetEnv(env_key: str, default=None) -> str:
+    """Obtém variáveis de ambiente com suporte para Docker e fallback para arquivo .env
+    
+    Esta função busca variáveis de ambiente primeiro do ambiente do sistema (Docker)
+    e então do arquivo .env se não encontrado. Inclui validações e valores default.
 
     Args:
-        env (string): chave string denotando o nome da variável de ambiente que será solicitada
+        env_key (str): Nome da variável de ambiente a ser obtida
+        default (Any, optional): Valor default se a variável não for encontrada
 
     Returns:
-        String: Este método retorna uma string que denota o valor da chave da variável de ambiente.
+        str: Valor da variável de ambiente ou default se não encontrada
+        
+    Raises:
+        ValueError: Se uma variável requerida (sem default) não for encontrada
     """
-
     try:
-        local_env = os.getcwd()
-        dotenv_path = os.path.join(local_env, ".env")
-        load_dotenv(dotenv_path)
+        # Primeiro tenta obter do ambiente (Docker)
+        value = os.environ.get(env_key)
+        
+        # Se não encontrou no ambiente, tenta do arquivo .env
+        if value is None:
+            # Localiza o arquivo .env
+            env_paths = [
+                os.path.join(os.getcwd(), '.env'),
+                os.path.join(os.path.dirname(os.getcwd()), '.env'),
+                '/.env'  # Caminho absoluto para Docker
+            ]
+            
+            # Tenta carregar de cada possível localização
+            for env_path in env_paths:
+                if os.path.exists(env_path):
+                    load_dotenv(env_path)
+                    value = os.environ.get(env_key)
+                    if value:
+                        break
+        
+        # Se ainda não encontrou, usa o default
+        if value is None:
+            if default is not None:
+                value = default
+            else:
+                raise ValueError(f"Variável de ambiente '{env_key}' não encontrada e nenhum valor default fornecido")
+                
+        return value
 
-        return os.getenv(env)
-
-    except Exception as text:
-        log_retorno_erro(text)
+    except Exception as error:
+        log_retorno_erro(f"Erro ao obter variável de ambiente '{env_key}': {str(error)}")
+        raise
 
 
 def conecta_bd_generico(name_db):
@@ -474,7 +272,7 @@ def download_arquiv_barprogress(
             response = requests.get(url)
 
             with open(
-                os.path.join(file_path, nome_file + tipo_download), "wb"
+                Path(file_path, nome_file + tipo_download), "wb"
             ) as f:
                 f.write(response.content)
 
@@ -491,7 +289,7 @@ def download_arquiv_barprogress(
             response = requests.get(url)
 
             open(
-                (os.path.join(file_path, nome_file + tipo_download)), "wb"
+                (Path(file_path, nome_file + tipo_download)), "wb"
             ).write(response.content)
 
             return
@@ -500,7 +298,7 @@ def download_arquiv_barprogress(
             response = requests.get(url)
 
             open(
-                (os.path.join(file_path, nome_file + tipo_download)), "wb"
+                (Path(file_path, nome_file + tipo_download)), "wb"
             ).write(response.content)
 
             return
@@ -794,7 +592,7 @@ def split_csv_file_pandas_todos(
 
         # Lê o arquivo CSV usando pandas
         df = pd.read_csv(
-            (os.path.join(file_path_entrada, nome_file)),
+            (Path(file_path_entrada, nome_file)),
             sep=";",
             # skiprows=0,
             header=header_entrada,
@@ -921,7 +719,7 @@ def split_csv_file_pandas_todos(
             start = i * row_limit
             end = (i + 1) * row_limit
             output_file_name = f"{nome_file}._parte_{i + 1}"  # ext
-            output_file_path = os.path.join(file_path_saida, output_file_name)
+            output_file_path = Path(file_path_saida, output_file_name)
             df[start:end].to_csv(
                 output_file_path,
                 index=False,
@@ -1051,7 +849,7 @@ def leitura_csv_insercao_bd_sql(
 
                 # GRAVAR DADOS NO BANCO
 
-                path_file_csv = os.path.join(extracted_files, idx_arquivos_tmp)
+                path_file_csv = Path(extracted_files, idx_arquivos_tmp)
 
                 cur.execute("""SET CLIENT_ENCODING TO 'Utf-8';""")
                 cur.execute("""SHOW client_encoding;""")

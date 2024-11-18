@@ -1,31 +1,128 @@
-# docker-compose.yml
 services:
   app:
-    build: .
-    stdin_open: true # Enable stdin
-    tty: true # Enable terminal
+    build:
+      context: .
+      dockerfile: Dockerfile
+    stdin_open: true
+    tty: true
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     volumes:
+      # App code
       - .:/app
-      - ./data:/data
-    environment:
-      - DB_HOST=db
-      - DB_PORT=5432
-      - DB_USER=postgres
-      - DB_PASSWORD=yourpassword
-      - DB_NAME=dados_etl
-    depends_on:
-      - db
 
-  db:
-    image: postgres:16
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=yourpassword
-      - POSTGRES_DB=dados_etl
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
+      # Data directories
+      - ${DATA_DIR:-./data}:/app/data
+      - ${DOWNLOAD_DIR:-./data/download}:/app/data/download
+      - ${EXTRACT_DIR:-./data/extracted}:/app/data/extracted
+      - ${CONVERT_DIR:-./data/converted}:/app/data/converted
 
-volumes:
-  postgres_data:
+      # RFB volumes
+      - ${RFB_FILES_PATH:-./files/dados_rfb}:/app/files/dados_rfb
+      - ${OUTPUT_FILES_PATH:-./files/dados_rfb/OUTPUT_FILES}:/app/files/dados_rfb/OUTPUT_FILES
+      - ${EXTRACTED_FILES_PATH:-./files/dados_rfb/EXTRACTED_FILES}:/app/files/dados_rfb/EXTRACTED_FILES
+      - ${EXTRACTED_FILES_PATH_CONVERT:-./files/dados_rfb/EXTRACTED_FILES_CONVERT}:/app/files/dados_rfb/EXTRACTED_FILES_CONVERT
+      - ${OUTPUT_ERROS:-./files/dados_rfb/OUTPUT_ERROS}:/app/files/dados_rfb/OUTPUT_ERROS
+
+      # IBGE volumes
+      - ${IBGE_FILES_PATH:-./files/dados_ibge}:/app/files/dados_ibge
+      - ${IBGE_OUTPUT_ERROS_PATH:-./files/dados_ibge/OUTPUT_ERROS}:/app/files/dados_ibge/OUTPUT_ERROS
+
+      # ANP volumes
+      - ${ANP_FILES_PATH:-./files/dados_anp}:/app/files/dados_anp
+      - ${ANP_OUTPUT_ERROS_PATH:-./files/dados_anp/OUTPUT_ERROS}:/app/files/dados_anp/OUTPUT_ERROS
+
+      # RAIS volumes
+      - ${RAIS_FILES_PATH:-./files/dados_rais}:/app/files/dados_rais
+      - ${RAIS_OUTPUT_FILES_PATH:-./files/dados_rais/OUTPUT_FILES}:/app/files/dados_rais/OUTPUT_FILES
+      - ${RAIS_EXTRACTED_FILES_PATH:-./files/dados_rais/EXTRACTED_FILES}:/app/files/dados_rais/EXTRACTED_FILES
+      - ${RAIS_EXTRACTED_FILES_PATH_CONVERT:-./files/dados_rais/EXTRACTED_FILES_CONVERT}:/app/files/dados_rais/EXTRACTED_FILES_CONVERT
+      - ${RAIS_OUTPUT_ERROS_PATH:-./files/dados_rais/OUTPUT_ERROS}:/app/files/dados_rais/OUTPUT_ERROS
+
+      # SGI volumes
+      - ${SGI_FILES_PATH:-./files/dados_sgi}:/app/files/dados_sgi
+      - ${SGI_OUTPUT_FILES_PATH:-./files/dados_sgi/OUTPUT_FILES}:/app/files/dados_sgi/OUTPUT_FILES
+      - ${SGI_OUTPUT_FILES_PATH_CONVERT:-./files/dados_sgi/OUTPUT_FILES_CONVERT}:/app/files/dados_sgi/OUTPUT_FILES_CONVERT
+      - ${SGI_OUTPUT_ERROS_PATH:-./files/dados_sgi/OUTPUT_ERROS}:/app/files/dados_sgi/OUTPUT_ERROS
+
+      # FT volumes
+      - ${FT_FILES_PATH:-./files/dados_ft}:/app/files/dados_ft
+      - ${FT_OUTPUT_FILES_PATH:-./files/dados_ft/OUTPUT_FILES}:/app/files/dados_ft/OUTPUT_FILES
+      - ${FT_OUTPUT_FILES_PATH_CONVERT:-./files/dados_ft/OUTPUT_FILES_CONVERT}:/app/files/dados_ft/OUTPUT_FILES_CONVERT
+      - ${FT_OUTPUT_ERROS_PATH:-./files/dados_ft/OUTPUT_ERROS}:/app/files/dados_ft/OUTPUT_ERROS
+
+      # VAR_ESTRUTURANTES volumes
+      - ${VAR_FILES_PATH:-./files/dados_var_estruturantes}:/app/files/dados_var_estruturantes
+      - ${VAR_OUTPUT_FILES_PATH:-./files/dados_var_estruturantes/OUTPUT_FILES}:/app/files/dados_var_estruturantes/OUTPUT_FILES
+      - ${VAR_OUTPUT_FILES_PATH_CONVERT:-./files/dados_var_estruturantes/OUTPUT_FILES_CONVERT}:/app/files/dados_var_estruturantes/OUTPUT_FILES_CONVERT
+      - ${VAR_OUTPUT_ERROS_PATH:-./files/dados_var_estruturantes/OUTPUT_ERROS}:/app/files/dados_var_estruturantes/OUTPUT_ERROS
+
+    env_file:
+      - .env
+    environment:
+      # Database configs
+      - DB_HOST=${DB_HOST:-host.docker.internal}
+      - DB_PORT=${DB_PORT:-5432}
+      - DB_USER=${DB_USER:-postgres}
+      - DB_PASSWORD=${DB_PASSWORD:-postgres}
+      - DB_NAME=${DB_NAME:-dados_etl}
+
+      # Data directories
+      - DATA_DIR=/app/data
+      - DOWNLOAD_DIR=/app/data/download
+      - EXTRACT_DIR=/app/data/extracted
+      - CONVERT_DIR=/app/data/converted
+
+      # Base paths
+      - PWD=/app
+
+      # RFB paths
+      - RFB_FILES_PATH=/app/files/dados_rfb
+      - OUTPUT_FILES_PATH=/app/files/dados_rfb/OUTPUT_FILES
+      - EXTRACTED_FILES_PATH=/app/files/dados_rfb/EXTRACTED_FILES
+      - EXTRACTED_FILES_PATH_CONVERT=/app/files/dados_rfb/EXTRACTED_FILES_CONVERT
+      - OUTPUT_ERROS=/app/files/dados_rfb/OUTPUT_ERROS
+
+      # IBGE paths
+      - IBGE_FILES_PATH=/app/files/dados_ibge
+      - IBGE_OUTPUT_ERROS_PATH=/app/files/dados_ibge/OUTPUT_ERROS
+
+      # ANP paths
+      - ANP_FILES_PATH=/app/files/dados_anp
+      - ANP_OUTPUT_ERROS_PATH=/app/files/dados_anp/OUTPUT_ERROS
+
+      # RAIS paths
+      - RAIS_FILES_PATH=/app/files/dados_rais
+      - RAIS_OUTPUT_FILES_PATH=/app/files/dados_rais/OUTPUT_FILES
+      - RAIS_EXTRACTED_FILES_PATH=/app/files/dados_rais/EXTRACTED_FILES
+      - RAIS_EXTRACTED_FILES_PATH_CONVERT=/app/files/dados_rais/EXTRACTED_FILES_CONVERT
+      - RAIS_OUTPUT_ERROS_PATH=/app/files/dados_rais/OUTPUT_ERROS
+
+      # SGI paths
+      - SGI_FILES_PATH=/app/files/dados_sgi
+      - SGI_OUTPUT_FILES_PATH=/app/files/dados_sgi/OUTPUT_FILES
+      - SGI_OUTPUT_FILES_PATH_CONVERT=/app/files/dados_sgi/OUTPUT_FILES_CONVERT
+      - SGI_OUTPUT_ERROS_PATH=/app/files/dados_sgi/OUTPUT_ERROS
+
+      # FT paths
+      - FT_FILES_PATH=/app/files/dados_ft
+      - FT_OUTPUT_FILES_PATH=/app/files/dados_ft/OUTPUT_FILES
+      - FT_OUTPUT_FILES_PATH_CONVERT=/app/files/dados_ft/OUTPUT_FILES_CONVERT
+      - FT_OUTPUT_ERROS_PATH=/app/files/dados_ft/OUTPUT_ERROS
+
+      # VAR paths
+      - VAR_FILES_PATH=/app/files/dados_var_estruturantes
+      - VAR_OUTPUT_FILES_PATH=/app/files/dados_var_estruturantes/OUTPUT_FILES
+      - VAR_OUTPUT_FILES_PATH_CONVERT=/app/files/dados_var_estruturantes/OUTPUT_FILES_CONVERT
+      - VAR_OUTPUT_ERROS_PATH=/app/files/dados_var_estruturantes/OUTPUT_ERROS
+
+      # Timezone
+      - TZ=America/Sao_Paulo
+
+    restart: unless-stopped
+    networks:
+      - etl-network
+
+networks:
+  etl-network:
+    driver: bridge

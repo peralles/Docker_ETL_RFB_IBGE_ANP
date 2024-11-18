@@ -1,1 +1,585 @@
+[91mERROR:[92m[11/16/2024 06:25:15 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(gerenciar_bancos) finalizada com erro abaixo: 
+ (database "dados_etl" already exists
+)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 199, in gerenciar_bancos
+    cur.execute(sql_3)
+psycopg2.errors.DuplicateDatabase: database "dados_etl" already exists
 
+[91mINFO:[92m[11/16/2024 06:25:40 PM][0m: *** (baixar_arq_rfb_estab) executada em todos os arquivos  
+Com tempo de (00:00:06)h:mim:s ***
+[91mINFO:[92m[11/16/2024 06:25:40 PM][0m: ### O processo total (baixar_arq_rfb_estab) de download foi finalizado... 
+ Com tempo de (00:00:06)h:mim:s ###
+[91mINFO:[92m[11/16/2024 06:26:56 PM][0m: ### O processo total (descompactar_arq_rfb_estab) de descompactação de todos os arquivos foi finalizado... 
+ Com tempo de (00:00:00)h:mim:s ###
+[91mINFO:[92m[11/16/2024 06:27:26 PM][0m: !!! Nao executada (leitura_csv_insercao_bd_sql) pelo motivo: 
+            (Sem arquivos na pasta (/app/files/dados_rfb/EXTRACTED_FILES_CONVERT) contendo o nome EMPRE) !!!
+[91mINFO:[92m[11/16/2024 06:27:26 PM][0m: *** (leitura_csv_insercao_bd_sql) executada em todos os arquivos EMPRE 
+Com tempo de (00:00:00)h:mim:s ***
+[91mINFO:[92m[11/16/2024 06:27:27 PM][0m: !!! Nao executada (leitura_csv_insercao_bd_sql) pelo motivo: 
+            (Sem arquivos na pasta (/app/files/dados_rfb/EXTRACTED_FILES_CONVERT) contendo o nome ESTABELE) !!!
+[91mINFO:[92m[11/16/2024 06:27:27 PM][0m: *** (leitura_csv_insercao_bd_sql) executada em todos os arquivos ESTABELE 
+Com tempo de (00:00:00)h:mim:s ***
+[91mINFO:[92m[11/16/2024 06:27:28 PM][0m: !!! Nao executada (leitura_csv_insercao_bd_sql) pelo motivo: 
+            (Sem arquivos na pasta (/app/files/dados_rfb/EXTRACTED_FILES_CONVERT) contendo o nome SOCIO) !!!
+[91mINFO:[92m[11/16/2024 06:27:28 PM][0m: *** (leitura_csv_insercao_bd_sql) executada em todos os arquivos SOCIO 
+Com tempo de (00:00:00)h:mim:s ***
+[91mINFO:[92m[11/16/2024 06:27:29 PM][0m: !!! Nao executada (leitura_csv_insercao_bd_sql) pelo motivo: 
+            (Sem arquivos na pasta (/app/files/dados_rfb/EXTRACTED_FILES_CONVERT) contendo o nome SIMPLES) !!!
+[91mINFO:[92m[11/16/2024 06:27:29 PM][0m: *** (leitura_csv_insercao_bd_sql) executada em todos os arquivos SIMPLES 
+Com tempo de (00:00:00)h:mim:s ***
+[91mINFO:[92m[11/16/2024 06:27:30 PM][0m: !!! Nao executada (leitura_csv_insercao_bd_sql) pelo motivo: 
+            (Sem arquivos na pasta (/app/files/dados_rfb/EXTRACTED_FILES_CONVERT) contendo o nome CNAE) !!!
+[91mINFO:[92m[11/16/2024 06:27:30 PM][0m: *** (leitura_csv_insercao_bd_sql) executada em todos os arquivos CNAE 
+Com tempo de (00:00:00)h:mim:s ***
+[91mINFO:[92m[11/16/2024 06:27:31 PM][0m: !!! Nao executada (leitura_csv_insercao_bd_sql) pelo motivo: 
+            (Sem arquivos na pasta (/app/files/dados_rfb/EXTRACTED_FILES_CONVERT) contendo o nome MOTI) !!!
+[91mINFO:[92m[11/16/2024 06:27:31 PM][0m: *** (leitura_csv_insercao_bd_sql) executada em todos os arquivos MOTI 
+Com tempo de (00:00:00)h:mim:s ***
+[91mINFO:[92m[11/16/2024 06:27:32 PM][0m: !!! Nao executada (leitura_csv_insercao_bd_sql) pelo motivo: 
+            (Sem arquivos na pasta (/app/files/dados_rfb/EXTRACTED_FILES_CONVERT) contendo o nome MUNIC) !!!
+[91mINFO:[92m[11/16/2024 06:27:32 PM][0m: *** (leitura_csv_insercao_bd_sql) executada em todos os arquivos MUNIC 
+Com tempo de (00:00:00)h:mim:s ***
+[91mINFO:[92m[11/16/2024 06:27:34 PM][0m: !!! Nao executada (leitura_csv_insercao_bd_sql) pelo motivo: 
+            (Sem arquivos na pasta (/app/files/dados_rfb/EXTRACTED_FILES_CONVERT) contendo o nome NATJU) !!!
+[91mINFO:[92m[11/16/2024 06:27:34 PM][0m: *** (leitura_csv_insercao_bd_sql) executada em todos os arquivos NATJU 
+Com tempo de (00:00:00)h:mim:s ***
+[91mINFO:[92m[11/16/2024 06:27:35 PM][0m: !!! Nao executada (leitura_csv_insercao_bd_sql) pelo motivo: 
+            (Sem arquivos na pasta (/app/files/dados_rfb/EXTRACTED_FILES_CONVERT) contendo o nome PAIS) !!!
+[91mINFO:[92m[11/16/2024 06:27:35 PM][0m: *** (leitura_csv_insercao_bd_sql) executada em todos os arquivos PAIS 
+Com tempo de (00:00:00)h:mim:s ***
+[91mINFO:[92m[11/16/2024 06:27:36 PM][0m: !!! Nao executada (leitura_csv_insercao_bd_sql) pelo motivo: 
+            (Sem arquivos na pasta (/app/files/dados_rfb/EXTRACTED_FILES_CONVERT) contendo o nome QUALS) !!!
+[91mINFO:[92m[11/16/2024 06:27:36 PM][0m: *** (leitura_csv_insercao_bd_sql) executada em todos os arquivos QUALS 
+Com tempo de (00:00:00)h:mim:s ***
+[91mINFO:[92m[11/16/2024 06:27:36 PM][0m: *** (inserir_dados_estab_bd) executada em todos os arquivos  
+Com tempo de (00:00:10)h:mim:s ***
+[91mINFO:[92m[11/16/2024 06:27:36 PM][0m: ### O processo total (inserir_dados_estab_bd) de inserção no banco de todas as seções foi finalizado... 
+ Com tempo de (00:00:10)h:mim:s ###
+[91mERROR:[92m[11/16/2024 06:27:43 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(verificar_repetidos_tabelas) finalizada com erro abaixo: 
+ (relation "tb_rfb_empresas" does not exist
+LINE 4:             FROM tb_rfb_empresas 
+                         ^
+)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 1181, in verificar_repetidos_tabelas
+    cur.execute(sql_1)
+psycopg2.errors.UndefinedTable: relation "tb_rfb_empresas" does not exist
+LINE 4:             FROM tb_rfb_empresas 
+                         ^
+
+[91mERROR:[92m[11/16/2024 06:27:43 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(remover_repetidos_tabelas) finalizada com erro abaixo: 
+ (cannot unpack non-iterable NoneType object)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 1331, in remover_repetidos_tabelas
+    df_list, df_ori, valor_tmp = verificar_repetidos_tabelas(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+[91mERROR:[92m[11/16/2024 06:27:43 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(verificar_repetidos_tabelas) finalizada com erro abaixo: 
+ (relation "tb_rfb_estabelecimentos" does not exist
+LINE 4:             FROM tb_rfb_estabelecimentos 
+                         ^
+)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 1181, in verificar_repetidos_tabelas
+    cur.execute(sql_1)
+psycopg2.errors.UndefinedTable: relation "tb_rfb_estabelecimentos" does not exist
+LINE 4:             FROM tb_rfb_estabelecimentos 
+                         ^
+
+[91mERROR:[92m[11/16/2024 06:27:43 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(remover_repetidos_tabelas) finalizada com erro abaixo: 
+ (cannot unpack non-iterable NoneType object)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 1331, in remover_repetidos_tabelas
+    df_list, df_ori, valor_tmp = verificar_repetidos_tabelas(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+[91mINFO:[92m[11/16/2024 06:27:43 PM][0m: ### O processo total (cnpj_repetidos_rfb) de verificação/remoção de cnpj repetidos nas tabelas na dados_etl foi finalizado... 
+ Com tempo de (00:00:00)h:mim:s ###
+[96mINFO:[92m[11/16/2024 06:34:57 PM][0m: ### O processo total (descompactar_arq_rfb_estab) de descompactação de todos os arquivos foi finalizado... 
+ Com tempo de (00:00:00)h:mim:s ###
+[96mINFO:[92m[11/16/2024 06:35:01 PM][0m: ### O processo total (descompactar_arq_rfb_estab) de descompactação de todos os arquivos foi finalizado... 
+ Com tempo de (00:00:00)h:mim:s ###
+[96mERROR:[92m[11/16/2024 06:35:06 PM][0m: !!! ATENÇÃO NÃO A ARQUIVOS NA PASTA ESPECÍFICADA !!!
+NoneType: None
+[96mINFO:[92m[11/16/2024 06:35:06 PM][0m: ### O processo total (converter_utf8_arq_rfb_estab) de conversão/separação/criação coluna foi finalizado... 
+ Com tempo de (00:00:00)h:mim:s ###
+[96mERROR:[92m[11/16/2024 06:35:10 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(conecta_bd_generico) finalizada com erro abaixo: 
+ (could not translate host name "db" to address: Temporary failure in name resolution
+)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 103, in conecta_bd_generico
+    pg_conn = psycopg2.connect(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not translate host name "db" to address: Temporary failure in name resolution
+
+[96mERROR:[92m[11/16/2024 06:35:10 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(inserir_dados_estab_bd) finalizada com erro abaixo: 
+ (cannot unpack non-iterable NoneType object)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/C_Script_RFB.py", line 316, in inserir_dados_estab_bd
+    altera_datastyle_sql_geral()
+  File "/app/src/C_Script_RFB.py", line 296, in altera_datastyle_sql_geral
+    cur, pg_conn = conecta_bd_generico(GetEnv('DB_NAME'))
+    ^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+[96mERROR:[92m[11/16/2024 06:38:51 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(conecta_bd_generico) finalizada com erro abaixo: 
+ (could not translate host name "db" to address: Temporary failure in name resolution
+)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 103, in conecta_bd_generico
+    pg_conn = psycopg2.connect(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not translate host name "db" to address: Temporary failure in name resolution
+
+[96mERROR:[92m[11/16/2024 06:38:51 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(gerenciar_bancos) finalizada com erro abaixo: 
+ (cannot unpack non-iterable NoneType object)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 146, in gerenciar_bancos
+    cur, pg_conn = conecta_bd_generico("postgres")
+    ^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+[96mERROR:[92m[11/16/2024 06:38:58 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(conecta_bd_generico) finalizada com erro abaixo: 
+ (could not translate host name "db" to address: Temporary failure in name resolution
+)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 103, in conecta_bd_generico
+    pg_conn = psycopg2.connect(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not translate host name "db" to address: Temporary failure in name resolution
+
+[96mERROR:[92m[11/16/2024 06:38:58 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(gerenciar_bancos) finalizada com erro abaixo: 
+ (cannot unpack non-iterable NoneType object)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 146, in gerenciar_bancos
+    cur, pg_conn = conecta_bd_generico("postgres")
+    ^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+[91mERROR:[92m[11/16/2024 06:41:41 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(conecta_bd_generico) finalizada com erro abaixo: 
+ (could not translate host name "db" to address: Temporary failure in name resolution
+)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 103, in conecta_bd_generico
+    pg_conn = psycopg2.connect(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not translate host name "db" to address: Temporary failure in name resolution
+
+[91mERROR:[92m[11/16/2024 06:41:41 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(gerenciar_bancos) finalizada com erro abaixo: 
+ (cannot unpack non-iterable NoneType object)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 146, in gerenciar_bancos
+    cur, pg_conn = conecta_bd_generico("postgres")
+    ^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+[91mERROR:[92m[11/16/2024 06:43:54 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(conecta_bd_generico) finalizada com erro abaixo: 
+ (could not translate host name "db" to address: Temporary failure in name resolution
+)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 103, in conecta_bd_generico
+    pg_conn = psycopg2.connect(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not translate host name "db" to address: Temporary failure in name resolution
+
+[91mERROR:[92m[11/16/2024 06:43:54 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(gerenciar_bancos) finalizada com erro abaixo: 
+ (cannot unpack non-iterable NoneType object)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 146, in gerenciar_bancos
+    cur, pg_conn = conecta_bd_generico("postgres")
+    ^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+[91mERROR:[92m[11/16/2024 06:43:57 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(conecta_bd_generico) finalizada com erro abaixo: 
+ (could not translate host name "db" to address: Temporary failure in name resolution
+)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 103, in conecta_bd_generico
+    pg_conn = psycopg2.connect(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not translate host name "db" to address: Temporary failure in name resolution
+
+[91mERROR:[92m[11/16/2024 06:43:57 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(gerenciar_bancos) finalizada com erro abaixo: 
+ (cannot unpack non-iterable NoneType object)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 146, in gerenciar_bancos
+    cur, pg_conn = conecta_bd_generico("postgres")
+    ^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+[96mINFO:[92m[11/16/2024 06:51:41 PM][0m: *** (baixar_arq_rfb_estab) executada em todos os arquivos  
+Com tempo de (00:00:06)h:mim:s ***
+[96mINFO:[92m[11/16/2024 06:51:41 PM][0m: ### O processo total (baixar_arq_rfb_estab) de download foi finalizado... 
+ Com tempo de (00:00:06)h:mim:s ###
+[96mINFO:[92m[11/16/2024 06:51:46 PM][0m: ### O processo total (descompactar_arq_rfb_estab) de descompactação de todos os arquivos foi finalizado... 
+ Com tempo de (00:00:00)h:mim:s ###
+[96mERROR:[92m[11/16/2024 06:51:51 PM][0m: !!! ATENÇÃO NÃO A ARQUIVOS NA PASTA ESPECÍFICADA !!!
+NoneType: None
+[96mINFO:[92m[11/16/2024 06:51:51 PM][0m: ### O processo total (converter_utf8_arq_rfb_estab) de conversão/separação/criação coluna foi finalizado... 
+ Com tempo de (00:00:00)h:mim:s ###
+[96mERROR:[92m[11/16/2024 06:51:54 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(conecta_bd_generico) finalizada com erro abaixo: 
+ (could not translate host name "db" to address: Temporary failure in name resolution
+)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 103, in conecta_bd_generico
+    pg_conn = psycopg2.connect(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not translate host name "db" to address: Temporary failure in name resolution
+
+[96mERROR:[92m[11/16/2024 06:51:54 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(inserir_dados_estab_bd) finalizada com erro abaixo: 
+ (cannot unpack non-iterable NoneType object)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/C_Script_RFB.py", line 316, in inserir_dados_estab_bd
+    altera_datastyle_sql_geral()
+  File "/app/src/C_Script_RFB.py", line 296, in altera_datastyle_sql_geral
+    cur, pg_conn = conecta_bd_generico(GetEnv('DB_NAME'))
+    ^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+[96mERROR:[92m[11/16/2024 06:55:18 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(conecta_bd_generico) finalizada com erro abaixo: 
+ (could not translate host name "db" to address: Temporary failure in name resolution
+)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 103, in conecta_bd_generico
+    pg_conn = psycopg2.connect(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not translate host name "db" to address: Temporary failure in name resolution
+
+[96mERROR:[92m[11/16/2024 06:55:18 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(gerenciar_bancos) finalizada com erro abaixo: 
+ (cannot unpack non-iterable NoneType object)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 146, in gerenciar_bancos
+    cur, pg_conn = conecta_bd_generico("postgres")
+    ^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+[96mERROR:[92m[11/16/2024 06:55:20 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(conecta_bd_generico) finalizada com erro abaixo: 
+ (could not translate host name "db" to address: Temporary failure in name resolution
+)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 103, in conecta_bd_generico
+    pg_conn = psycopg2.connect(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not translate host name "db" to address: Temporary failure in name resolution
+
+[96mERROR:[92m[11/16/2024 06:55:20 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(gerenciar_bancos) finalizada com erro abaixo: 
+ (cannot unpack non-iterable NoneType object)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 146, in gerenciar_bancos
+    cur, pg_conn = conecta_bd_generico("postgres")
+    ^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+[96mERROR:[92m[11/16/2024 06:55:21 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(conecta_bd_generico) finalizada com erro abaixo: 
+ (could not translate host name "db" to address: Temporary failure in name resolution
+)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 103, in conecta_bd_generico
+    pg_conn = psycopg2.connect(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not translate host name "db" to address: Temporary failure in name resolution
+
+[96mERROR:[92m[11/16/2024 06:55:21 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(gerenciar_bancos) finalizada com erro abaixo: 
+ (cannot unpack non-iterable NoneType object)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 146, in gerenciar_bancos
+    cur, pg_conn = conecta_bd_generico("postgres")
+    ^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+[96mERROR:[92m[11/16/2024 06:55:22 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(conecta_bd_generico) finalizada com erro abaixo: 
+ (could not translate host name "db" to address: Temporary failure in name resolution
+)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 103, in conecta_bd_generico
+    pg_conn = psycopg2.connect(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not translate host name "db" to address: Temporary failure in name resolution
+
+[96mERROR:[92m[11/16/2024 06:55:22 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(gerenciar_bancos) finalizada com erro abaixo: 
+ (cannot unpack non-iterable NoneType object)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 146, in gerenciar_bancos
+    cur, pg_conn = conecta_bd_generico("postgres")
+    ^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+[96mERROR:[92m[11/16/2024 06:55:28 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(conecta_bd_generico) finalizada com erro abaixo: 
+ (could not translate host name "db" to address: Temporary failure in name resolution
+)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 103, in conecta_bd_generico
+    pg_conn = psycopg2.connect(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not translate host name "db" to address: Temporary failure in name resolution
+
+[96mERROR:[92m[11/16/2024 06:55:28 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(gerenciar_bancos) finalizada com erro abaixo: 
+ (cannot unpack non-iterable NoneType object)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 191, in gerenciar_bancos
+    cur, pg_conn = conecta_bd_generico("postgres")
+    ^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+[96mERROR:[92m[11/16/2024 06:55:30 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(conecta_bd_generico) finalizada com erro abaixo: 
+ (could not translate host name "db" to address: Temporary failure in name resolution
+)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 103, in conecta_bd_generico
+    pg_conn = psycopg2.connect(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not translate host name "db" to address: Temporary failure in name resolution
+
+[96mERROR:[92m[11/16/2024 06:55:30 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(gerenciar_bancos) finalizada com erro abaixo: 
+ (cannot unpack non-iterable NoneType object)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 191, in gerenciar_bancos
+    cur, pg_conn = conecta_bd_generico("postgres")
+    ^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+[96mERROR:[92m[11/16/2024 06:55:31 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(conecta_bd_generico) finalizada com erro abaixo: 
+ (could not translate host name "db" to address: Temporary failure in name resolution
+)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 103, in conecta_bd_generico
+    pg_conn = psycopg2.connect(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not translate host name "db" to address: Temporary failure in name resolution
+
+[96mERROR:[92m[11/16/2024 06:55:31 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(gerenciar_bancos) finalizada com erro abaixo: 
+ (cannot unpack non-iterable NoneType object)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 191, in gerenciar_bancos
+    cur, pg_conn = conecta_bd_generico("postgres")
+    ^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+[96mERROR:[92m[11/16/2024 06:55:32 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(conecta_bd_generico) finalizada com erro abaixo: 
+ (could not translate host name "db" to address: Temporary failure in name resolution
+)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 103, in conecta_bd_generico
+    pg_conn = psycopg2.connect(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not translate host name "db" to address: Temporary failure in name resolution
+
+[96mERROR:[92m[11/16/2024 06:55:32 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(gerenciar_bancos) finalizada com erro abaixo: 
+ (cannot unpack non-iterable NoneType object)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 191, in gerenciar_bancos
+    cur, pg_conn = conecta_bd_generico("postgres")
+    ^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+[96mERROR:[92m[11/16/2024 06:55:32 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(conecta_bd_generico) finalizada com erro abaixo: 
+ (could not translate host name "db" to address: Temporary failure in name resolution
+)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 103, in conecta_bd_generico
+    pg_conn = psycopg2.connect(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not translate host name "db" to address: Temporary failure in name resolution
+
+[96mERROR:[92m[11/16/2024 06:55:32 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(gerenciar_bancos) finalizada com erro abaixo: 
+ (cannot unpack non-iterable NoneType object)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 191, in gerenciar_bancos
+    cur, pg_conn = conecta_bd_generico("postgres")
+    ^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+[96mERROR:[92m[11/16/2024 06:55:33 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(conecta_bd_generico) finalizada com erro abaixo: 
+ (could not translate host name "db" to address: Temporary failure in name resolution
+)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 103, in conecta_bd_generico
+    pg_conn = psycopg2.connect(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not translate host name "db" to address: Temporary failure in name resolution
+
+[96mERROR:[92m[11/16/2024 06:55:33 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(gerenciar_bancos) finalizada com erro abaixo: 
+ (cannot unpack non-iterable NoneType object)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 191, in gerenciar_bancos
+    cur, pg_conn = conecta_bd_generico("postgres")
+    ^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+[96mERROR:[92m[11/16/2024 06:55:34 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(conecta_bd_generico) finalizada com erro abaixo: 
+ (could not translate host name "db" to address: Temporary failure in name resolution
+)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 103, in conecta_bd_generico
+    pg_conn = psycopg2.connect(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not translate host name "db" to address: Temporary failure in name resolution
+
+[96mERROR:[92m[11/16/2024 06:55:34 PM][0m: 
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+(gerenciar_bancos) finalizada com erro abaixo: 
+ (cannot unpack non-iterable NoneType object)
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Traceback (most recent call last):
+  File "/app/src/B_Def_Global.py", line 191, in gerenciar_bancos
+    cur, pg_conn = conecta_bd_generico("postgres")
+    ^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object

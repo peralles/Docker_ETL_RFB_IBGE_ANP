@@ -1,9 +1,8 @@
 import os
 import platform
 
-from B_Def_Global import (Criar_Var_Ambiente, VerifPath, gerenciar_bancos,
-                          gerenciar_diretorios, log_retorno_erro,
-                          print_divisor_inicio_fim)
+from B_Def_Global import (VerifPath, gerenciar_bancos, gerenciar_diretorios,
+                          log_retorno_erro, print_divisor_inicio_fim)
 from C_Script_RFB import *
 from D_Script_IBGE import *
 from E_Script_ANP import *
@@ -43,12 +42,11 @@ def Principal():
     clear_screen()
     opcoes = [
         ("1 - Ler path de trabalho", PathTrab),
-        ("2 - Criar variáveis de ambiente", Definir_Var_Ambiente),
-        ("3 - Criar/Exibir/Remover banco de dados", Banco_Dados),
-        ("4 - Criar/Ler/Excluir diretórios de arquivos", caminhosDeArquivos),
-        ("5 - Executar downloads RFB", executar_script_rfb),
-        ("6 - Executar script IBGE", baixar_dados_ibge),
-        ("7 - Executar script ANP", baixar_dados_anp)
+        ("2 - Criar/Exibir/Remover banco de dados", Banco_Dados),
+        ("3 - Criar/Ler/Excluir diretórios de arquivos", caminhosDeArquivos),
+        ("4 - Executar downloads RFB", executar_script_rfb),
+        ("5 - Executar script IBGE", baixar_dados_ibge),
+        ("6 - Executar script ANP", baixar_dados_anp)
     ]
     return Menu("ETL - Dados Públicos CNPJ", opcoes)
 
@@ -60,17 +58,6 @@ def PathTrab():
         ("2 - vazio", lambda: None)
     ]
     return Menu("1 - Ler path de trabalho", opcoes)
-
-
-def Definir_Var_Ambiente():
-    clear_screen()
-    print_divisor_inicio_fim(
-        '=== Operações com o arquivo de configuração de ambiente', 3)
-    opcoes = [
-        ("1 - Definir/Criar arquivo de configuração de ambiente em '.env' ",
-         Criar_Var_Ambiente)
-    ]
-    return Menu("2 - Criar variáveis de ambiente", opcoes)
 
 
 def Banco_Dados():
